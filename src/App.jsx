@@ -131,12 +131,15 @@
 // }
 import { useState } from "react";
 function Counter() {
+  //commit it
   const [count, setCount] = useState(0);
-  
-  return <div>
-    <p>{count}</p>
-    <button onClick={() => setCount(count + 1)}>Increment</button>
-     </div>
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
 }
 
 function ResetButton({ resetGame }) {
@@ -148,7 +151,7 @@ export default function App() {
   return (
     <div>
       <h1>hello world</h1>
-     
+
       <Counter key={key} />
       <ResetButton resetGame={triggerReset} />
     </div>
