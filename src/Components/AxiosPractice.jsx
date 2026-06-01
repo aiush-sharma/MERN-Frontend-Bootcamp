@@ -28,10 +28,13 @@ const AxiosPractice = () => {
   return (
     <>
       <button className="p-5 bg-amber-400">Fetch</button>
-
+      <button className="p-5 bg-amber-400" onClick={AxiosData}>
+        Axios Data
+      </button>
+      <div className="flex  flex-wrap">
       {users.map((user, idx) => (
         <>
-          <div className=" flex-col w-full">
+         
             <div className=" bg-green-300 p-5 m-5 rounded-md " key={idx}>
               <p key={user.id}>{user.id}</p>
               <p key={user.firstName}>{user.firstName}</p>
@@ -39,14 +42,15 @@ const AxiosPractice = () => {
               <p key={user.email}>{user.email}</p>
               <p key={user.address}>{user.address.city}</p>
             </div>
-          </div>
+        
         </>
       ))}
-      <button className="p-5 bg-amber-400" onClick={AxiosData}>
-        Axios Data
-      </button>
+     
+      </div>
+       
     </>
   );
+  
 };
 
 export default AxiosPractice;
