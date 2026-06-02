@@ -1,20 +1,23 @@
 import React from "react";
 import { Button } from "./Navbar.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
       <nav className="navbar bg-red-400 text-white flex justify-between items-center px-5 py-3">
-        <span>Logo 1</span>
+        <span>BootCamp</span>
         <ul className="list flex space-x-2.5 items-center ">
           <li className="listItems ">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="listItems">
-            <a href="#">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li className="listItems">
-            <a href="#">Skill</a>
+            <Link to="/Skill">Skill</Link>
           </li>
+          <li></li>
+
           <li className="listItems">
             <a href="#">Contact</a>
           </li>

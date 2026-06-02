@@ -1,9 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 const AxiosPractice = () => {
   let url = "https://dummyjson.com/users";
   const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    console.log("component mounted");
+  });
   //   async function FetchData() {
   //     try {
   //       const response = await fetch(url);
@@ -27,14 +31,13 @@ const AxiosPractice = () => {
 
   return (
     <>
-      <button className="p-5 bg-amber-400">Fetch</button>
+      {/* <button className="p-5 bg-amber-400">Fetch</button> */}
       <button className="p-5 bg-amber-400" onClick={AxiosData}>
         Axios Data
       </button>
       <div className="flex  flex-wrap">
-      {users.map((user, idx) => (
-        <>
-         
+        {users.map((user, idx) => (
+          <>
             <div className=" bg-green-300 p-5 m-5 rounded-md " key={idx}>
               <p key={user.id}>{user.id}</p>
               <p key={user.firstName}>{user.firstName}</p>
@@ -42,17 +45,17 @@ const AxiosPractice = () => {
               <p key={user.email}>{user.email}</p>
               <p key={user.address}>{user.address.city}</p>
             </div>
-        
-        </>
-      ))}
-     
+          </>
+        ))}
       </div>
-       
     </>
   );
-  
 };
 
 export default AxiosPractice;
 
 // first name last name email and address
+// react lifecycle
+// 1. mount
+// 2. update
+// 3. unmount
