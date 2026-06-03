@@ -20,7 +20,7 @@ const AxiosPractice = () => {
   //       console.log("An Error Occured ", err);
   //     }
   //   }
-  async function AxiosData() {
+    async function AxiosData() {
     try {
       const data = await axios.get(url);
       setUsers(data.data.users);

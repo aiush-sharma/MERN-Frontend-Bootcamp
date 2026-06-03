@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./Navbar.css";
 import { Link } from "react-router-dom";
+import useEffect from "../Components/UseEffect.jsx";
 const Navbar = () => {
   return (
     <>
@@ -19,7 +20,9 @@ const Navbar = () => {
           <li></li>
 
           <li className="listItems">
-            <a href="#">Contact</a>
+            <Link to="/useEffect" element={useEffect}>
+              UseEffect
+            </Link>
           </li>
           <li className="listItems">
             <Button bgColor="rgb(228, 206, 27);">Hire Me</Button>
