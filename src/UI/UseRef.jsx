@@ -1,47 +1,56 @@
-import React, { Component, useEffect, useState } from "react";
-import { useRef } from "react";
-const UseRef = React.memo(({ values }) => {
-  const [value, setValue] = useState(0);
-  const inputRef = useRef(null);
-  const valueRef = useRef(0);
+import React, { memo, useEffect, useRef, useState } from "react";
 
-  useEffect(() => {
-    console.log("component mounted...");
-    inputRef.current.focus();
-  });
+const UseRef = memo(({ values }) => {
+  console.log("UseRef Component Rendered...");
+
+  const [value, setValue] = useState(0);
+
+  const valueRef = useRef(0);
+  const inputRef = useRef(null);
 
   console.log(valueRef);
+
   function Random() {
     setValue(Math.floor(Math.random() * 999));
+    console.log(value);
   }
+
   function RandomRef() {
     valueRef.current = Math.floor(Math.random() * 999);
     console.log(valueRef.current);
   }
+
   useEffect(() => {
-    console.log("Rendering use Ref...");
-  });
+    console.log("Component Rerendered...");
+    inputRef.current.focus();
+  }, []);
+
   return (
-    <>
-      <div>
-        UseRef Loaded
-        <p>{value}</p>
-        <button
-          className="bg-pink-200 text-black px-10 py-3 border-none"
-          onClick={Random}
-        >
-          Random Num
-        </button>
-        <p>{valueRef.current}</p>
-        <button
-          className="bg-red-400 text-black px-10 py-3 border-none"
-          onClick={RandomRef}
-        >
-          Random Ref
-        </button>
-        <input type="text" ref={inputRef} />
-      </div>
-    </>
+    <div className="bg-pink-100 m-10 p-5">
+      UseRef Component
+      <button
+        className="bg-green-100 text-black px-10 py-3 border-none"
+        onClick={Random}
+      >
+        {" "}
+        Random Num
+      </button>
+      <p className="w-32 p-4 bg-green-100 text-black px-2 py-4 text-5xl font-extrabold">
+        {value}
+      </p>
+      <button
+        className="bg-amber-100 text-black px-10 py-3 border-none"
+        onClick={RandomRef}
+      >
+        {" "}
+        Random Ref Number
+      </button>
+      <p className="w-32  p-4 bg-amber-100 text-black px-2 py-4 text-5xl font-extrabold">
+        {valueRef.current}
+      </p>
+      <input type="text" ref={inputRef} />
+      <input type="text" />
+    </div>
   );
 });
 
