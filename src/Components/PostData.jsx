@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 const PostData = () => {
-    const Navigate= useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,18 +30,20 @@ const PostData = () => {
       console.log(error);
     }
   }
+
   function editData() {
-    Navigate('/editData')
+    navigate("/editdata");
   }
 
   return (
     <div className="flex h-screen justify-center items-center">
       <button
-        className="bg-yellow-300 text-white px-10 py-3 m-10"
+        className="bg-yellow-300 text-white px-10 py-3 border-none"
         onClick={editData}
       >
         Edit Data
       </button>
+
       <form
         className="bg-green-100 text-black w-auto px-20 py-3 m-10"
         onSubmit={handleSubmit}
@@ -104,7 +107,6 @@ const PostData = () => {
           {" "}
           Submit{" "}
         </button>
-   
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const AxiosPractice = () => {
+const Axios = () => {
   let url = "https://dummyjson.com/users";
   const [users, setUsers] = useState([]);
 
@@ -20,7 +20,7 @@ const AxiosPractice = () => {
   //       console.log("An Error Occured ", err);
   //     }
   //   }
-    async function AxiosData() {
+  async function AxiosData() {
     try {
       const data = await axios.get(url);
       setUsers(data.data.users);
@@ -52,7 +52,7 @@ const AxiosPractice = () => {
   );
 };
 
-export default AxiosPractice;
+export default Axios;
 
 // first name last name email and address
 // react lifecycle
